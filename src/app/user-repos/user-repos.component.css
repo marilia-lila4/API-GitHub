@@ -1,0 +1,16 @@
+img {
+    height: 150px;
+    margin: 20px;
+  }
+
+.mb-1{
+    margin: 10px ;
+}
+
+.container {
+    max-width: 960px;
+  }
+  
+@media (min-width: 768px) {
+   .h-md-250 { height: 250px; }
+ }

@@ -1,0 +1,61 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Lista de Usuário do GitHub</h1>
+  </div>
+
+  <div class="pricing-header px-2 pb-md-4 mx-auto text-center">
+    <div class="container-fluid">
+      <form class="d-flex" (submit)="searchUser()">
+        <input [(ngModel)]="githubUserQuery" name="user" class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Procurar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Usuário: {{ githubProfile && githubProfile.login ? githubProfile.login : '' }}</h4>
+      </div>
+      <div class="card-body">
+        <div *ngIf="githubProfile">
+        <h1 class="card-title pricing-card-title">
+          <img
+          src="{{ githubProfile && githubProfile.avatar_url ? githubProfile.avatar_url : '' }}"
+        /></h1>
+        </div>
+        <div *ngIf="!githubProfile">
+          <h1 class="card-title pricing-card-title">
+            <img
+            src="assets/img/usuario.png" alt="Sem imagem" width="500" height="600"
+          /></h1>
+          </div>
+          <div *ngIf="githubProfile">
+            <ul class="list-unstyled">
+              GitHub
+              <a href="{{ githubProfile && githubProfile.html_url ? githubProfile.html_url : '' }}" target="_blank" class="btn btn-secondary"><i class="bi bi-github"></i></a>
+            </ul>
+          </div>
+          <div *ngIf="!githubProfile">
+            <ul class="list-unstyled">
+              GitHub
+              <button class="btn btn-secondary" disabled><i class="bi bi-github"></i></button>
+            </ul>
+          </div>
+          <div *ngIf="githubProfile">
+            <div class="mb-1 text-muted"><strong>Nome:</strong> {{  githubProfile && githubProfile.name ?  githubProfile.name : 'Sem Nome' }}</div>
+            <div class="mb-1 text-muted"><strong>Seguidores:</strong> {{ githubProfile.followers }}</div>
+            <div class="mb-1 text-muted"><strong>Seguindo:</strong> {{ githubProfile.following }}</div>
+          </div>
+        <div style="margin: 40px;" *ngIf="githubProfile">
+          <button type="button" routerLink="users/{{githubProfile && githubProfile.login ? githubProfile.login : ''}}/repos" class="btn btn-outline-primary">Repositório</button>
+          <button type="button" routerLink="users/{{githubProfile && githubProfile.login ? githubProfile.login : ''}}/starred" class="btn btn-outline-warning">Starred</button>
+        </div>
+        <div style="margin: 40px;" *ngIf="!githubProfile">
+          <button type="button" class="btn btn-outline-primary" disabled>Repositório</button>
+          <button type="button" class="btn btn-outline-warning" disabled>Starred</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

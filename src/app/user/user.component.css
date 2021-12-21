@@ -1,0 +1,55 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 300px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+    html {
+      font-size: 16px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+    .btn-outline-success {
+      margin-bottom: 10px;
+    }
+  }
+
+  html {
+    font-size: 14px;
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  
+  .card-deck .card {
+    min-width: 220px;
+  }
+
+  img    {
+    border-radius: 80%;
+    width: 150px;
+    height: 150px;
+}
+
+.btn-secondary {
+  margin: 10px;
+  border-radius: 80%;
+  background-color: rgb(23, 28, 32);
+}
+
+.btn {
+  margin-left: 10px;
+}
